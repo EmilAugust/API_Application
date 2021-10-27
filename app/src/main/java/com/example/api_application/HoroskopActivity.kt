@@ -28,7 +28,7 @@ class HoroskopActivity : AppCompatActivity() {
         val description : TextView = findViewById(R.id.description)
 
         //Makes a list out of all of the variables with the TextViews
-        val textViewList = listOf(
+        val textViewList : List<TextView> = listOf(
             compability,
             number,
             time,
@@ -39,7 +39,7 @@ class HoroskopActivity : AppCompatActivity() {
             description)
 
         //Gets intent
-        val getURL = intent.getStringExtra("url")
+        val getURL : String? = intent.getStringExtra("url")
         val url : String = getURL.toString()
 
         //Calls the horoscope function
@@ -85,7 +85,7 @@ class HoroskopActivity : AppCompatActivity() {
     //Formats response
     private fun formatResponse(resp : String) : List<String> {
         try {
-            val list = resp.split("\"")
+            val list : List<String> = resp.split("\"")
 
             //Returns a list of where it splits to get the content
             return listOf(

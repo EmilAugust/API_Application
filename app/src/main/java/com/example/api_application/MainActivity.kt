@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         start.setOnClickListener {
             val selectedSign : String = signSpinner.selectedItem.toString()
             val selectedDay : String = daySpinner.selectedItem.toString()
-            val url = createURL(selectedSign, selectedDay)
+            val url : String = createURL(selectedSign, selectedDay)
 
             val intent = Intent(this@MainActivity,HoroskopActivity::class.java)
             intent.putExtra("url", url)
