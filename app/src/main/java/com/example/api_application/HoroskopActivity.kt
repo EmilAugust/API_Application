@@ -10,7 +10,8 @@ import com.android.volley.toolbox.Volley
 
 class HoroskopActivity : AppCompatActivity() {
 
-    var requestQueue : RequestQueue? = null
+    //Makes a variable for request-queue
+    private var requestQueue : RequestQueue? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +40,14 @@ class HoroskopActivity : AppCompatActivity() {
 
         //Gets intent
         val getURL = intent.getStringExtra("url")
-        val url = getURL.toString()
+        val url : String = getURL.toString()
 
         //Calls the horoscope function
         APICall(textViewList, url)
 
     }
+
+    //API call function
     private fun APICall(views: List<TextView>, url: String) {
 
         requestQueue = Volley.newRequestQueue(this)
@@ -63,7 +66,7 @@ class HoroskopActivity : AppCompatActivity() {
             },
             { error ->
                 //Handles errors
-                views[0].text = "Kunne ikke laste horoskop!"
+                views[0].text = getString(R.string.kunne_ikke_laste_horoskop)
             }
         )
         //Gives the request a tag

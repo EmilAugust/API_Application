@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">API_Application</string>
+    <string name="view_horoscope">View Horoscope</string>
+    <string name="kunne_ikke_laste_horoskop">Kunne ikke laste horoskop!</string>
 
     <string-array name="signs">
         <item>Aries</item>
